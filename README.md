@@ -1,0 +1,1 @@
+Welcome to my WWII small arms API! Enjoy!
