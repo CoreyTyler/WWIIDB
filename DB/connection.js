@@ -20,4 +20,4 @@ class Connection{
 
 const connectionInstance = new Connection()
 
-module.exports = connectionInstance
+module.exports = connectionInstance;
