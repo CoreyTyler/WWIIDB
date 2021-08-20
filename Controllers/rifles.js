@@ -1,7 +1,16 @@
 const pool = require('../DB/connection')
 
-const getRifles = () => {
-
+const getRifles = (req, res) => {
+    pool.query('SELECT * FROM WW2Weapons.rifles', function(err, rows) {
+        if(err) {
+            return res.json({
+                'error': true,
+                'message': 'Error occured: '+ err
+            })
+        } else {
+            res.json(rows)
+        }
+    })
 }
 
 const getId = () => {
