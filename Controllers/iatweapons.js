@@ -1,7 +1,7 @@
 const pool = require('../DB/connection')
 
 const getIatweapons = (req, res) => {
-    pool.query('SELECT * FROM WW2Weapons.`infantry-anti-tank-weapons`;', function(err, rows) {
+    pool.query('SELECT * FROM WW2Weapons.infantryAntiTankWeapons;', function(err, rows) {
         if(err) {
             return res.json({
                 'error': true,
@@ -13,8 +13,18 @@ const getIatweapons = (req, res) => {
     })
 }
 
-const getId = () => {
-
+const getId = (req, res) => {
+    let sql = `SELECT * FROM WW2Weapons.infantryAntiTankWeapons WHERE idInfantryAntiTankWeapons = ${req.params.id}`;
+    pool.query(sql, function(err, row) {
+        if(err) {
+            return res.json({
+                'error': true,
+                'message': 'Error occured: '+ err
+            })
+        } else {
+            res.json(row)
+        }
+    })
 }
 
 const getName = () => {

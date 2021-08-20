@@ -13,8 +13,18 @@ const getHandguns = (req, res) => {
     }) 
 }
 
-const getId = () => {
-
+const getId = (req, res) => {
+    let sql = `SELECT * FROM WW2Weapons.handguns WHERE idhandguns = ${req.params.id}`;
+    pool.query(sql, function(err, row) {
+        if(err) {
+            return res.json({
+                'error': true,
+                'message': 'Error occured: '+ err
+            })
+        } else {
+            res.json(row)
+        }
+    })
 }
 
 const getName = () => {

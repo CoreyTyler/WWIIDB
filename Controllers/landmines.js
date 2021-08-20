@@ -13,7 +13,18 @@ const getLandmines = (req, res) => {
     })
 }
 
-const getId = () => {
+const getId = (req, res) => {
+    let sql = `SELECT * FROM WW2Weapons.landmines WHERE idlandmines = ${req.params.id}`;
+    pool.query(sql, function(err, row) {
+        if(err) {
+            return res.json({
+                'error': true,
+                'message': 'Error occured: '+ err
+            })
+        } else {
+            res.json(row)
+        }
+    })
 
 }
 
