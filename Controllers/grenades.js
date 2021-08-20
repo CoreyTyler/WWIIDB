@@ -25,19 +25,9 @@ const getId = (req, res) => {
             res.json(row)
         }
     }) 
-}
-
-const getName = () => {
-
-}
-
-const getCountry = () => {
-
-}
+};
 
 module.exports = {
     getGrenades,
-    getId,
-    getName,
-    getCountry
+    getId
 }

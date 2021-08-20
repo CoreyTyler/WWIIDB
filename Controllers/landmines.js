@@ -26,19 +26,9 @@ const getId = (req, res) => {
         }
     })
 
-}
-
-const getName = () => {
-
-}
-
-const getCountry = () => {
-    
-}
+};
 
 module.exports = {
     getLandmines,
-    getId,
-    getName,
-    getCountry
+    getId
 }
