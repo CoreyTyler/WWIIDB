@@ -1,20 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const riflesController = require('../Controllers/rifles')
 
-router.get('/rifles', (req, res) => {
+router.get('/rifles', riflesController.getRifles);
 
-});
+router.get('/rifles/:id', riflesController.getId);
 
-router.get('/rifles/:id', (req, res) => {
+router.get('/rifles/name', riflesController.getName);
 
-});
-
-router.get('/rifles/name', (req, res) => {
-
-});
-
-router.get('/rifles/country', (req, res) => {
-
-});
+router.get('/rifles/country', riflesController.getCountry);
 
 module.exports = router

@@ -1,20 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const landminesController = require('../Controllers/landmines')
 
-router.get('/landmines', (req, res) => {
+router.get('/landmines', landminesController.getLandmines);
 
-});
+router.get('/landmines/:id', landminesController.getId);
 
-router.get('/landmines/:id', (req, res) => {
+router.get('/landmines/name', landminesController.getName);
 
-});
-
-router.get('/landmines/name', (req, res) => {
-
-});
-
-router.get('/landmines/country', (req, res) => {
-
-});
+router.get('/landmines/country', landminesController.getCountry);
 
 module.exports = router

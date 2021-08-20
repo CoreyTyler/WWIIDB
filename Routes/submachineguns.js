@@ -1,20 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const submachinegunsController = require('../Controllers/submachineguns')
 
-router.get('/submachineguns', (req, res) => {
+router.get('/submachineguns', submachinegunsController.getSubmachineguns);
 
-});
+router.get('/submachineguns/:id', submachinegunsController.getId);
 
-router.get('/submachineguns/:id', (req, res) => {
+router.get('/submachineguns/name', submachinegunsController.getName);
 
-});
-
-router.get('/submachineguns/name', (req, res) => {
-
-});
-
-router.get('/submachineguns/country', (req, res) => {
-
-});
+router.get('/submachineguns/country', submachinegunsController.getCountry);
 
 module.exports = router
